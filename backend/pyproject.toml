@@ -1,0 +1,9 @@
+[project]
+name = "allnitr"
+version = "0.1.0"
+description = "For helping students study for their upcoming exams."
+authors = ["Jasper Markarian <]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = "^{fastapi_version}"
