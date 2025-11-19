@@ -1,0 +1,58 @@
+# ---------------------------
+# Global
+# ---------------------------
+.DS_Store
+*.log
+.env
+.env.*
+__pycache__/
+*.pyc
+
+# ---------------------------
+# Python / Backend
+# ---------------------------
+venv/
+.venv/
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment folders
+env/
+ENV/
+
+# Local settings
+settings_local.py
+
+# ---------------------------
+# Node / Frontend (React)
+# ---------------------------
+frontend/node_modules/
+frontend/.env
+frontend/.parcel-cache/
+frontend/dist/
+frontend/build/
+
+# Yarn / npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---------------------------
+# IDEs / Editors
+# ---------------------------
+.vscode/
+.idea/
+*.iml
+
+# ---------------------------
+# OS-specific
+# ---------------------------
+Thumbs.db
+ehthumbs.db

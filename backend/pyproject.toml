@@ -2,8 +2,20 @@
 name = "allnitr"
 version = "0.1.0"
 description = "For helping students study for their upcoming exams."
-authors = ["Jasper Markarian <]
+authors = [{ name = "Jasper Markarian" }]
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic",
+    "python-dotenv",
+    "requests",
+    "aiohttp",
+    "starlette",
+    "sqlalchemy",
+    "transformers",
+    "torch",
+]
 
-[tool.poetry.dependencies]
-python = "^3.13"
-fastapi = "^{fastapi_version}"
+[tool.black]
+line-length = 88
+target-version = ['py312']
