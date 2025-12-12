@@ -1,6 +1,11 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
-import Home from './pages/Home.jsx';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import { StudyProvider } from './context/StudyContext.jsx';
 
-const root = createRoot(document.getElementById('root'));
-root.render(<Home />);
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <StudyProvider>
+        <App />
+    </StudyProvider>
+)
