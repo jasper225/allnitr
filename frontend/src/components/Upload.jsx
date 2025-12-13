@@ -13,6 +13,8 @@ export default function Upload() {
         if (!file) return;
         setLoading(true);
         
+        try {
+        
         const data = await uploadFile(file);
 
         setRawText(data.raw_text);
@@ -22,6 +24,13 @@ export default function Upload() {
 
         setLoading(false);
         navigate('/study');
+        } catch (error) {
+            console.error(error);
+            alert('Failed to upload file. Please try again.');
+        }
+        finally {
+        setLoading(false);
+        }
     }
     return (
         <div className="upload-container">

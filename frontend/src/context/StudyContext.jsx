@@ -6,10 +6,13 @@ export function StudyProvider({ children }) {
     const [rawText, setRawText] = useState('');
     const [summary, setSummary] = useState('');
     const [bullets, setBullets] = useState([]);
-    const [quiz, setQuiz] = useState(null);
+    const [quiz, setQuiz] = useState({ mcq: [], tf: [] });
 
     return (
-        <StudyContext.Provider value={{ rawText, setRawText, summary, setSummary, bullets, setBullets, quiz, setQuiz }}>
+        <StudyContext.Provider value={{ rawText, setRawText, 
+                                        summary, setSummary, 
+                                        bullets, setBullets, 
+                                        quiz, setQuiz }}>
             {children}
         </StudyContext.Provider>
 

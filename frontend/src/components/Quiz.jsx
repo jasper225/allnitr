@@ -1,33 +1,26 @@
+export default function Quiz({ quiz }) {
+  if (!quiz || (!quiz.mcq?.length && !quiz.tf?.length)) {
+    return <p>No quiz generated yet.</p>;
+  }
 
+  return (
+    <div>
+      <h3>Quiz</h3>
 
-export default function Quiz() {
-    if (!quiz) return null;
-    return (
-        <div className="quiz">
-            <h3>Quiz</h3>
-
-            <h4>Multiple Choice</h4>
-            {quiz.multiple_choice.map((q, index) => (
-                <div key={index} className="quiz-question">
-                    <p>{q.question}</p>
-                    <ul>
-                        {q.options.map((option, i) => (
-                            <li key={i}>{option}</li>
-                        ))}
-                    </ul>
-                </div>
+      {quiz.mcq?.map((q, i) => (
+        <div key={`mcq-${i}`}>
+          <p>{q.question}</p>
+          <ul>
+            {q.options.map((opt, j) => (
+              <li key={j}>{opt}</li>
             ))}
-
-            <h4>True / False</h4>
-            {quiz.true_false.map((q, index) => (
-                <div key={index} className="quiz-question">
-                    <p>{q.question}</p>
-                    <ul>
-                        <li>True</li>
-                        <li>False</li>
-                    </ul>
-                </div>
-            ))}
+          </ul>
         </div>
-    )
+      ))}
+
+      {quiz.tf?.map((q, i) => (
+        <p key={`tf-${i}`}>{q.question}</p>
+      ))}
+    </div>
+  );
 }

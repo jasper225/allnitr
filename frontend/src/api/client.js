@@ -1,14 +1,13 @@
-const API_BASE = "http://localhost:8000/api/v1";
-
 export async function uploadFile(file) {
-    const form = new FormData();
-    form.append('file', file);
+    const formData = new FormData();
+    formData.append('file', file);
 
-    const response = await fetch(`${API_BASE}/pipeline/`, {
+    const response = await fetch("/api/v1/upload/", {
         method: 'POST',
-        body: form,
+        body: formData,
     });
 
     if (!response.ok) throw new Error('File upload failed');
+    
     return response.json();
 }
